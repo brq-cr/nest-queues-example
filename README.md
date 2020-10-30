@@ -44,7 +44,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Testing multiple child_process
+## Testing multiple child_process feature
 
 - If you want to change the variables for retry attempts and delay time of workers update the `report.service.ts` file under the report module.
 
