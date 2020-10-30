@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { generate, of } from 'rxjs';
+import { of } from 'rxjs';
 import { ReportController } from './report.controller';
 import { ReportDto } from './report.dto';
 import { ReportService } from './report.service';

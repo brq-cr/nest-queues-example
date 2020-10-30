@@ -19,6 +19,8 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect('System is up and running.');
+      .expect(
+        'Please visit https://github.com/brq-cr/nestjs-rx-workers-poc for more information about this application.',
+      );
   });
 });
