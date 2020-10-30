@@ -46,9 +46,9 @@ $ npm run start:prod
 
 ## Testing multiple child_process
 
-- Open file and change the variables for retry attempt and delay time.
+- If you want to change the variables for retry attempts and delay time of workers update the `report.service.ts` file under the report module.
 
-- Run the application
+- Run the application:
 
 ```bash
 $ npm run start
@@ -56,20 +56,25 @@ $ npm run start
 ```
 
 - Open the Activity Monitor of your operative system.
+  <img width="1385" alt="Screen Shot 2020-10-30 at 12 35 07 PM" src="https://user-images.githubusercontent.com/2147281/97745412-71c06d00-1aae-11eb-95de-4f59109dedbb.png">
 
-- -Run the following cURL instruccion to make a POST call to generate a new IP report.
+- Run the following cURL instruction to make a POST call to generate a new IP report.
 
 ```bash
 $ curl -d '{"ip": "8.8.8.8","reportServices": ["ipapi", "freegeoip"]}' -H "Content-Type: application/json" -X POST http://localhost:3000/generateMultipleIpReport
 
 ```
 
-- Notice that for each report system will create a new node child process to execute the task and then it will terminate the process.
+<img width="1424" alt="Screen Shot 2020-10-30 at 12 36 20 PM" src="https://user-images.githubusercontent.com/2147281/97745541-a2a0a200-1aae-11eb-86ae-62ff9e84d2fe.png">
+
+- Notice that for each report the system will create a new node child process to execute the task and then it will terminate the process.
 
 ```bash
 $ curl -d '{"ip": "8.8.8.8","reportServices": ["ipapi", "freegeoip", "ipapi", "freegeoip", "ipapi", "freegeoip"]}' -H "Content-Type: application/json" -X POST http://localhost:3000/generateMultipleIpReport
 
 ```
+
+<img width="1390" alt="Screen Shot 2020-10-30 at 12 39 40 PM" src="https://user-images.githubusercontent.com/2147281/97745510-987ea380-1aae-11eb-80fe-fbaea39153a3.png">
 
 ## Test
 
