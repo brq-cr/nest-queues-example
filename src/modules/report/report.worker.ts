@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { from, Subscription, timer } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 import { retry, concatMap } from 'rxjs/operators';
 
 const [nodeRoute, scriptRoute, url, delay, retryAttempts] = process.argv;
