@@ -1,4 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
+import { ApiOperation } from '@nestjs/swagger';
 
 @Controller()
 export class AppController {
@@ -10,6 +11,7 @@ export class AppController {
   }
 
   @Get('status')
+  @ApiOperation({ summary: 'Use this endpoint to check if server is running' })
   getSystemStatus(): string {
     return 'System is up and running.';
   }

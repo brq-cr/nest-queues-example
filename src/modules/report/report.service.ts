@@ -65,7 +65,7 @@ export class ReportService {
             ip: response.ip,
             countryCode: response.country_code,
             countryName: response.country_name,
-            regionName: response.country_name,
+            regionCode: response.region_code,
           },
         });
       });

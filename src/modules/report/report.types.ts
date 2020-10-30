@@ -9,7 +9,7 @@ export type IPReport = {
     ip: string;
     countryCode: string;
     countryName: string;
-    regionName: string;
+    regionCode: string;
   };
 };
 
