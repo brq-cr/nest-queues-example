@@ -13,8 +13,8 @@ export interface ReportResponse {
 
 const request: Subscription = timer(parseFloat(delay) || 0)
   .pipe(
-    concatMap(() => from(axios.get<ReportResponse>(url))),
-    retry(parseFloat(retryAttempts)),
+    concatMap(() => axios.get<ReportResponse>(url)),
+    retry(parseFloat(retryAttempts) || 0),
   )
   .subscribe(
     result => {
