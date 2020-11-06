@@ -4,7 +4,7 @@ It provides a simple example of the implementation of node child_process API as 
 
 You also can use this example as a reference for:
 
-- To understand how to implement RxJS on the server-side. 🚀
+- To understand how to implement RxJS on server-side. 🚀
 - To understand how to create a new node child process and communicate with them using observable pattern.
 - A basic architecture to implement nestJS at enterprise-level applications.
 
