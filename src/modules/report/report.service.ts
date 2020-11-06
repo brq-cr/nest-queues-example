@@ -10,6 +10,11 @@ const MAX_ATTEMPTS = 2;
 
 @Injectable()
 export class ReportService {
+  private serviceUrl: Map<IPReportServices, IPReportServiceURL> = new Map([
+    [IPReportServices.Freegeoip, IPReportServiceURL.Freegeoip],
+    [IPReportServices.Ipapi, IPReportServiceURL.Ipapi]
+  ]);
+
   public generateMultipleReport(
     ip: string,
     ipReportServices: IPReportServices[],
@@ -19,25 +24,12 @@ export class ReportService {
         this.generateIPReport(
           ip,
           ipReportService,
-          this.getReportServiceUrl(ipReportService),
+          this.serviceUrl.get(ipReportService),
           MAX_ATTEMPTS,
         ),
       ),
       toArray(),
     );
-  }
-
-  private getReportServiceUrl(
-    reportService: IPReportServices,
-  ): IPReportServiceURL {
-    switch (reportService) {
-      case IPReportServices.Freegeoip:
-        return IPReportServiceURL.Freegeoip;
-      case IPReportServices.Ipapi:
-        return IPReportServiceURL.Ipapi;
-      default:
-        return null;
-    }
   }
 
   private generateIPReport(
