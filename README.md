@@ -8,6 +8,10 @@ You also can use this example as a reference for:
 - To understand how to create a new node child process and communicate with them using observable pattern.
 - A basic architecture to implement nestJS at enterprise-level applications.
 
+**THIS IS A POC**. The use of `child_process nodejs` API It is not advisable to handle asynchrony queues (workers). If you need to run queues in NestJS I recommend the use of [nestjs queues](https://docs.nestjs.com/techniques/queues) class for traditional architectures or use a [microservices](https://docs.nestjs.com/microservices/basics) architecture based solution instead. 
+
+
+
 ## Project Structure Overview
 
 ```
